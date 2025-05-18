@@ -1,13 +1,15 @@
 # Azure subscription vars
 subscription_id = "b6a27b6d-3141-46ad-871e-7a588457c248"
 client_id = "9d580b1f-468a-45e5-87fa-bc159daaf6c6"
-client_secret = "change_me"
+client_secret = "fZM8Q~tmovqfQHARLE2rAjOqHReeDRTkBR4pscWD"
 tenant_id = "e8f77457-bc04-4181-92d1-c189b5106abd"
 
 # Resource Group/Location
 location = "East US 2"
-resource_group_name = "Udacity-Final"
+#resource_group_name = "udacity-final-rg"
 application_type = "myApplicationUDACITY"
+resource_group = "udacity-final-rg"
+
 
 # Network
 virtual_network_name = "Udacity-Final-vnet"

@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "tfstate7342"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
-    access_key           = "change_me"
+    access_key           = "HQELeKS13uDIMyetSUvjqjsZLoQRsQ3hBOsqKZ79ZYuH+D7/I9wJAjb680UD9HZyXQ7VXg2K7gPH+AStZUFwTA=="
   }
 }
 module "resource_group" {
@@ -52,3 +52,4 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
 }
+
