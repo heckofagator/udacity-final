@@ -53,12 +53,11 @@ module "publicip" {
   resource_group   = "${module.resource_group.resource_group_name}"
 }
 module "vm" {
-  source              = "../modules/vm"
-  vm_name             = "udacity-fine-vm"
-  resource_group_name = azurerm_resource_group.main.name
-  location            = azurerm_resource_group.main.location
-  vm_size             = "Standard_B1s"
-  admin_username      = "azureuser"
-  ssh_public_key      = file("~/.ssh/id_rsa.pub")
-  network_interface_id = azurerm_network_interface.main.id
+  source               = "../../modules/vm"
+  address_space        = "${var.address_space}"
+  resource_group       = "${var.resource_group}"
+  location             = "${var.location}"
+  virtual_network_name = "${var.virtual_network_name}"
+  address_prefix_test  = "${var.address_prefix_test}"
+  application_type     = "${var.application_type}"
 }

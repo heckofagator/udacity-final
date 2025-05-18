@@ -1,17 +1,17 @@
-resource "azurerm_network_interface" "" {
+resource "azurerm_network_interface" "vm_nic" {
   name                = "udacity-final-nic"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = ""
+    subnet_id                     = azurerm_subnet.test.id
     private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = ""
+    public_ip_address_id          = azurerm_public_ip.test.id
   }
 }
 
-resource "azurerm_linux_virtual_machine" "" {
+resource "azurerm_linux_virtual_machine" "vm" {
   name                = "udacity-project-vm"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
