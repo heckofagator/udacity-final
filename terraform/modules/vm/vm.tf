@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "" {
 }
 
 resource "azurerm_linux_virtual_machine" "" {
-  name                = "Udacity-Final-vm"
+  name                = "${var.resource_group_name}-vm"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
   size                = "Standard_DS2_v2"
