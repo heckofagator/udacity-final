@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "tfstate7342"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
-    access_key           = "HQELeKS13uDIMyetSUvjqjsZLoQRsQ3hBOsqKZ79ZYuH+D7/I9wJAjb680UD9HZyXQ7VXg2K7gPH+AStZUFwTA=="
+    access_key           = "changeme"
   }
 }
 module "resource_group" {
@@ -52,7 +52,7 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
 }
-module "vm" {
+/*module "vm" {
   source               = "../../modules/vm"
   address_space        = "${var.address_space}"
   resource_group       = "${var.resource_group}"
@@ -60,5 +60,20 @@ module "vm" {
   virtual_network_name = "${var.virtual_network_name}"
   address_prefix_test  = "${var.address_prefix_test}"
   application_type     = "${var.application_type}"
-  subnet_id            = azurerm_subnet.test.id
+  subnet_id            = "${module.network.subnet_id_test}"
+  public_ip            = "${module.publicip.public_ip_address_id}"
+  network_interface_id = azurerm_network_interface.udacity-final-nic.id
 }
+resource "azurerm_network_interface" "udacity-final-nic" {
+  name                = "udacity-final-nic"
+  location            = "${var.location}"
+  #resource_group_name = azurerm_resource_group.main.name
+  resource_group       = "${var.resource_group}"
+
+  ip_configuration {
+    name                          = "internal"
+    subnet_id                     = "${var.subnet_id}"
+    private_ip_address_allocation = "Dynamic"
+  }
+}
+*/
