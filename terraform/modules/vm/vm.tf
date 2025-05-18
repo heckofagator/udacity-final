@@ -16,7 +16,7 @@ resource "azurerm_linux_virtual_machine" "vm" {
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
   size                = "Standard_DS2_v2"
-  admin_username      = ""
+  admin_username      = "adminuser"
   network_interface_ids = [azurerm_network_interface.udacity-final-nic]
   admin_ssh_key {
     username   = "adminuser"
