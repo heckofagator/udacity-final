@@ -60,4 +60,5 @@ module "vm" {
   virtual_network_name = "${var.virtual_network_name}"
   address_prefix_test  = "${var.address_prefix_test}"
   application_type     = "${var.application_type}"
+  subnet_id            = azurerm_subnet.test.id
 }
