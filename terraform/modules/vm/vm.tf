@@ -1,5 +1,5 @@
 resource "azurerm_network_interface" "nic" {
-  name                = "${var.prefix}-nic"
+  name                = "udacity-final-nic"
   location            = "${var.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "nic" {
 }
 
 resource "azurerm_linux_virtual_machine" "vm" {
-  name                = "${var.prefix}-vm"
+  name                = "udacity-final-vm"
   location            = "${var.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
   size                = "Standard_DS2_v2"

@@ -52,7 +52,7 @@ module "publicip" {
   resource_type    = "publicip"
   resource_group   = "${module.resource_group.resource_group_name}"
 }
-module "vm" {
+/*module "vm" {
   source               = "../../modules/vm"
   address_space        = "${var.address_space}"
   resource_group       = "${var.resource_group}"
