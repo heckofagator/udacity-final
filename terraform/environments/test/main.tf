@@ -10,7 +10,7 @@ terraform {
     storage_account_name = "tfstate7342"
     container_name       = "tfstate"
     key                  = "terraform.tfstate"
-    access_key           = "HQELeKS13uDIMyetSUvjqjsZLoQRsQ3hBOsqKZ79ZYuH+D7/I9wJAjb680UD9HZyXQ7VXg2K7gPH+AStZUFwTA=="
+    access_key           AStZUFwTA=="
   }
 }
 module "resource_group" {
